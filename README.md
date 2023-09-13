@@ -10,14 +10,4 @@ Before publishing, the organization's public key location and the domain the org
 
 When a user downloads and displays or otherwise interacts with the media, the client reads the location of the public key from the metadata, and fetches it. The client then verifies the media with the public key. If the signatute is correct and the key came from a domain owned by the domain listed in the metadata as the one the organization wants to show, it's shown as verified in the client
 
-
-A media could have a malicious domain in the metadata. Could this be dangerous?
-
-A platform which is like a blog. It has to have tools for the user to make blog posts. 
-
-When the user uploads a picture or document, it fetches the private key from enterprise key management, and signs it.
-
-When the website signs the document, it signs something like "keyaddress:key.example.com/publickey.pgp, domaintoshow:example.com" into the metadata, so the signed message is where the key comes from. 
-
-Also needs a viewer or tool which views/renders the document. It fetches the key from the specified address, checks if it is valid and says something like "This document was published by domaintoshow" (as long as domaintoshow is a domain belonging to the domain the key is on (eg. key.example.com belongs to example.com))
-
+In the future, it might be possible to leverage SSL certificates to authenticate the domain and organization name a media comes from
